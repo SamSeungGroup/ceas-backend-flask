@@ -6,7 +6,7 @@ import pandas as pd
 from kobert.utils import get_tokenizer
 from kobert.pytorch_kobert import get_pytorch_kobert_model
 
-from ceas_kobert_module import BERTDataset, BERTClassifier
+from modules.ceas_kobert_module import BERTDataset, BERTClassifier
 
 def comment_sentiment_analysis(comment_content):
     # 단어사전, 토크나이저 불러오기
