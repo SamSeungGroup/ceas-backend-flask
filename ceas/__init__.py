@@ -11,6 +11,6 @@ def create_app():
     from .views import comment_positive_view, word_cloud_view, product_positive_view
     app.register_blueprint(comment_positive_view.bp)
     app.register_blueprint(word_cloud_view.bp)
-    app.register_blueprint(product_positive_view)
+    app.register_blueprint(product_positive_view.bp)
 
     return app
