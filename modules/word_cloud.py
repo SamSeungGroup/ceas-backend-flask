@@ -9,7 +9,7 @@ def get_word_cloud(string):
 
     temp =[]
     for word, tag in line:
-        if tag in ['Noun', 'Adjective', 'Verb']:
+        if tag in ['Noun', 'Adjective']:
             temp.append(word)
     words = [n for n in temp if len(n) > 1]
     word_dic = Counter(words)
