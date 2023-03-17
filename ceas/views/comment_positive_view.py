@@ -7,11 +7,7 @@ bp = Blueprint('comments', __name__, url_prefix='/comment-positive')
 
 @bp.route('/<int:comment_id>')
 def comment_positive(comment_id):
-    result = get_comment_positive(comment_id)
-    if result['comment_positive'] is None:
-        comment_content = get_content(comment_id)
-        comment_positive = comment_sentiment_analysis(comment_content['content'])
-        set_comment_positive(comment_id, comment_positive['comment_positive'])
-        return get_comment_positive(comment_id)
-    
-    return result
+    comment_content = get_content(comment_id)
+    comment_positive = comment_sentiment_analysis(comment_content['content'])
+    set_comment_positive(comment_id, comment_positive['comment_positive'])
+    return get_comment_positive(comment_id)
