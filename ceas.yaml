@@ -75,7 +75,7 @@ dependencies:
     - jpype1==1.1.2
     - jupyter-core==4.12.0
     - kiwisolver==1.4.4
-    - kobert==0.2.3
+    - kobert @ git+https://git@github.com/SKTBrain/KoBERT.git@47a69af87928fc24e20f571fe10c3cc9dd9af9a3
     - konlpy==0.6.0
     - lxml==4.9.2
     - mako==1.2.4
@@ -85,7 +85,6 @@ dependencies:
     - mysql-connector-python==8.0.32
     - mysqlclient==1.4.6
     - nltk==3.8.1
-    - numpy==1.21.6
     - onnxruntime==1.8.0
     - pandas==1.1.5
     - pillow==9.4.0
@@ -94,7 +93,6 @@ dependencies:
     - pydantic==1.10.6
     - pyparsing==3.0.9
     - python-dotenv==0.21.1
-    - python-graphviz==0.8.4
     - pytz==2022.7.1
     - pywin32==305
     - pyyaml==6.0
