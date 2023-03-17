@@ -3,7 +3,7 @@ from flask import Blueprint
 from modules.comment_db import get_content, get_comment_positive, set_comment_positive
 from modules.ceas_comment_sentiment_anlaysis import comment_sentiment_analysis
 
-bp = Blueprint('comments', __name__, url_prefix='/comments')
+bp = Blueprint('comments', __name__, url_prefix='/comment-positive')
 
 @bp.route('/<int:comment_id>')
 def comment_positive(comment_id):
