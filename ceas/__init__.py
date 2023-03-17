@@ -8,8 +8,9 @@ def create_app():
     database = create_engine(app.config['DB_URL'])
     app.database = database
 
-    from .views import comment_positive_view, word_cloud_view
+    from .views import comment_positive_view, word_cloud_view, product_positive_view
     app.register_blueprint(comment_positive_view.bp)
     app.register_blueprint(word_cloud_view.bp)
+    app.register_blueprint(product_positive_view)
 
     return app

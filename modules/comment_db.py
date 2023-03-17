@@ -51,3 +51,43 @@ def get_comments(product_id):
         return {
                 'comments': comments
             }
+    
+def get_comments_positive(product_id):
+    with current_app.database.connect() as conn:
+        stmt = text("""
+            SELECT
+                comment_positive 
+            FROM comment
+            WHERE product_id = :product_id
+        """).params(product_id = product_id)
+        positive_list = conn.execute(stmt).fetchall()
+        result = [positive[0] for positive in positive_list]
+        return result
+
+def set_product_positive(product_id, positive_list):
+    total_positive = sum(positive_list)
+    product_positive = total_positive/len(positive_list)
+    with current_app.database.connect() as conn:
+        stmt = text("""
+            UPDATE
+                product
+            SET
+                product_positive = :product_positive
+            WHERE id = :product_id
+        """).params(product_id = product_id, product_positive = product_positive)
+        conn.execute(stmt)
+        conn.commit()
+
+def get_product_positive(product_id):
+    with current_app.database.connect() as conn:
+        stmt = text("""
+            SELECT
+                product_positive
+            FROM product
+            WHERE id = :product_id
+        """).params(product_id = product_id)
+        product_positive = conn.execute(stmt).fetchone()
+        print(product_positive)
+        return {
+                'product_positive': product_positive[0]
+            }
