@@ -26,5 +26,8 @@ def comments(product_id):
 
         return send_file(file_name, mimetype='image/jpeg')
     if request.method == "DELETE":
-        os.remove(f'ceas/{file_name}')
-        return "1"
+        if os.path.isfile(f'ceas/{file_name}'):
+            os.remove(f'ceas/{file_name}')
+            return "1"
+        else:
+            return "0"
