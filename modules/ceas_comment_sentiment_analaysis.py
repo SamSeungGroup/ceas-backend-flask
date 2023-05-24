@@ -49,7 +49,7 @@ def comment_sentiment_analysis(comment_content):
     final_positive = comment_positive if comment_positive>=0.5 else -comment_negative
 
     return {
-        'comment_positive': final_positive
+        'comment_positive': comment_positive
     }
 
 if __name__ == '__main__':
