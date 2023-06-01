@@ -1,4 +1,4 @@
 /.cache
-/ceas/images
+/ceas/images/*.jpeg
 __pycache__/
 *.py[cod]

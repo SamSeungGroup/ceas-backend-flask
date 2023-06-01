@@ -11,6 +11,8 @@ def get_word_cloud(string):
     for word, tag in line:
         if tag in ['Noun', 'Adjective']:
             temp.append(word)
+    if len(temp) == 0:
+        return None
     words = [n for n in temp if len(n) > 1]
     word_dic = Counter(words)
     word_cloud = WordCloud(font_path='font/malgun.ttf', 
